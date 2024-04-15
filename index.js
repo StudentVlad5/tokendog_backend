@@ -1,8 +1,10 @@
 const express = require('express')
-const config = require('./common/config/env.config.js');
+// const config = require('./common/config/env.config.js');
 const app = express();
+require("dotenv").config();
 //const port = 8000;
 
+const { port = 8000 } = process.env;
 const DogsRouter = require('./dogs/routes.config');
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
@@ -38,6 +40,6 @@ DogsRouter.routesConfig(app);
 //app.use('/static', express.static('public'));
 //app.use(bodyParser.json({limit: '50mb'}));
 //app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
-app.listen(config.port, () => {
-  console.log(`Example app listening on port ${config.port}!`)
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}!`)
 });

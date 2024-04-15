@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize');
-const config = require('../../common/config/env.config');
+// const config = require('../../common/config/env.config');
 const sequelize = new Sequelize("dogs_dev", "dogs_dev", 
 "74xpJcmZC93BN94t", {
 host: "localhost",

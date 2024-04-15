@@ -1,10 +1,11 @@
 
 const sequelize = require('sequelize');
-const config = require('../../common/config/env.config');
+// const config = require('../../common/config/env.config');
 //console.log(config.database);
+
 const sqllite = new sequelize({
-    dialect: config.database.dialect,
-    storage: config.database.storage,
+    dialect: process.env.databaseDialect,
+    storage: process.env.databaseStorage,
     pool: {
         max: 5,
         min: 0,
