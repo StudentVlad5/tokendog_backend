@@ -1,6 +1,6 @@
 const sqllite = require('../../common/services/sqllite.service').sqllite;
 const Sequelize = require('sequelize');
-const AccessoriesModel = require('../models/accessories.model').AccessoriesModel;
+// const AccessoriesModel = require('../models/accessories.model').AccessoriesModel;
 
 const effects= sqllite.define('effects', {
     // attributes

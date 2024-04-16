@@ -2,6 +2,8 @@ const express = require('express')
 // const config = require('./common/config/env.config.js');
 const app = express();
 require("dotenv").config();
+const logger = require("morgan");
+const cors = require("cors");
 //const port = 8000;
 
 const { port = 8000 } = process.env;
@@ -21,6 +23,9 @@ app.use(function (req, res, next) {
         return next();
     }
 });
+const formatsLogger = app.get("env") === "development" ? "dev" : "short";
+app.use(logger(formatsLogger));
+app.use(cors());
 app.use('/public', express.static(__dirname + '/public'));
 //console.log("YYYYYYYYY")
 app.get('/', (req, res) => {
